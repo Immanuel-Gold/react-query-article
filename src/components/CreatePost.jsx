@@ -52,7 +52,7 @@ const CreatePost = () => {
           <input type="text" onChange={handleChanges} />
         </div>
         <button className="self-start bg-black text-white p-[12px]">
-          Create new post
+          Create post
         </button>
       </form>
     </main>

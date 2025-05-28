@@ -10,31 +10,31 @@ import { useState } from "react";
 function App() {
   const [toggleComponent, setToggleComponent] = useState("create-post");
 
-  // const { data, isLoading, isError } = useQuery({
-  //   queryKey: ["fetchData"],
-  //   queryFn: async () => {
-  //     try {
-  //       return (await axios.get("https://jsonplaceholder.typicode.com/posts"))
-  //         .data;
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   },
-  // });
+  const { data, isLoading, isError } = useQuery({
+    queryKey: ["fetchData"],
+    queryFn: async () => {
+      try {
+        return (await axios.get("https://jsonplaceholder.typicode.com/posts"))
+          .data;
+      } catch (error) {
+        console.log(error);
+      }
+    },
+  });
 
-  // if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <div>Loading...</div>;
 
-  // if (isError) return <div>Error Found!</div>;
+  if (isError) return <div>Error Found!</div>;
 
-  // console.log(data);
+  console.log(data);
   return (
     <main className="p-[8px]">
-      {/* {data?.map((post) => (
+      {data?.map((post) => (
         <section className="mb-[20px]" key={post.id}>
           <h3 className="text-[1.5rem] font-bold">{post.title}</h3>
           <p>{post.body}</p>
         </section>
-      ))} */}
+      ))}
 
       <br />
 
